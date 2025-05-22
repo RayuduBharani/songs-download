@@ -1,27 +1,23 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "Backend for the project",
-  "main": "index.js",
+  "description": "",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
-    "build": "npm run build",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-  "author": "Rayudu Bharani",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
-  "type": "module",
   "dependencies": {
-    "@distube/ytdl-core": "^4.16.10",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "ffmpeg": "^0.0.4",
     "ffmpeg-static": "^5.2.0",
-    "fluent-ffmpeg": "^2.1.3",
+    "fluent-ffmpeg": "^2.1.2",
     "node-url-downloader": "^0.1.9",
-    "play-dl": "^1.9.7",
     "yt-search": "^2.11.0",
     "ytdl-core": "^4.11.5",
     "ytdl-mp3": "^3.4.1"
