@@ -3,10 +3,10 @@ const Song = ({ song  }) => {
 
   const handleDownload = (videoId) => {
     console.log(videoId)
-    fetch(`http://localhost:8000/download/${videoId}`)
+    fetch(`https://songs-download.onrender.com/download/${videoId}`)
       
     const link = document.createElement('a');
-    link.href = `http://localhost:8000/download/${videoId}`;
+    link.href = `https://songs-download.onrender.com/download/${videoId}`;
     link.setAttribute('download', `${song.title}.mp3`);
     document.body.appendChild(link);
     link.click();
