@@ -1,0 +1,6 @@
+.music-component{
+    overflow-y: scroll;
+}
+.music-component::-webkit-scrollbar {
+    display: none;
+}
