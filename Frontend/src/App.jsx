@@ -15,13 +15,15 @@ const App = () => {
     if (!query) 
       return;
     setIsLoading(true);
-    fetch(`https://songs-download.onrender.com/home/${query}`, {
+    fetch(`http://localhost:8000/home/${query}`, {
       method: "GET",
     })
       .then((response) => response.json())
       .then((data) => {
+        console.log("Raw API Response:", data);
+        console.log("First song ID:", data[0]?.id);
+        console.log("First song object:", JSON.stringify(data[0], null, 2));
         setSongs(data);
-        console.log(songs);
         setIsLoading(false);
       })
       .catch((err) => {
