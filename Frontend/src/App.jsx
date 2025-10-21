@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Loading from "./components/Loading";
 import Song from "./components/Song";
 
@@ -11,11 +11,11 @@ const App = () => {
     setQuery(event.target.value);
   };
 
-  const fetchData = () => {
-    if (!query) 
+  const fetchData = (searchQuery = query) => {
+    if (!searchQuery) 
       return;
     setIsLoading(true);
-    fetch(`https://songs-download.onrender.com/home/${query}`, {
+    fetch(`https://songs-download.onrender.com/home/${searchQuery}`, {
       method: "GET",
     })
       .then((response) => response.json())
@@ -31,6 +31,14 @@ const App = () => {
         setIsLoading(false);
       });
   };
+
+  // Fetch default songs on component mount
+  useEffect(() => {
+    const defaultSearchTerms = ["Telugu"];
+    const randomTerm = defaultSearchTerms[Math.floor(Math.random() * defaultSearchTerms.length)];
+    fetchData(randomTerm);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
