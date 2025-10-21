@@ -15,7 +15,7 @@ const App = () => {
     if (!query) 
       return;
     setIsLoading(true);
-    fetch(`http://localhost:8000/home/${query}`, {
+    fetch(`https://songs-download.onrender.com/home/${query}`, {
       method: "GET",
     })
       .then((response) => response.json())

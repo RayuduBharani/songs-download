@@ -9,7 +9,7 @@ const Song = ({ song  }) => {
       setIsDownloading(true);
       console.log("Downloading song:", songId);
       
-      const response = await fetch(`http://localhost:8000/download/${songId}`);
+      const response = await fetch(`https://songs-download.onrender.com/download/${songId}`);
       
       if (!response.ok) {
         console.error("Download failed:", response.status, response.statusText);
